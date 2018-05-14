@@ -7,6 +7,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Exercise.Students.AppContai
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Excercise.Students.Domain", "Excercise.Students.Domain\Excercise.Students.Domain.csproj", "{F664B4F4-3FF8-4126-9C36-0209160BB6ED}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Excercise.Students.Controllers.Interfaces", "Excercise.Students.Controllers.Interfaces\Excercise.Students.Controllers.Interfaces.csproj", "{AADA9CD2-9A91-41FC-B97D-90893473A892}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Excercise.Students.Controllers.ConsoleController", "Excercise.Students.Controllers.ConsoleController\Excercise.Students.Controllers.ConsoleController.csproj", "{4C6CDBAA-1EDE-45F0-A748-0496F47603DD}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +25,14 @@ Global
 		{F664B4F4-3FF8-4126-9C36-0209160BB6ED}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F664B4F4-3FF8-4126-9C36-0209160BB6ED}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F664B4F4-3FF8-4126-9C36-0209160BB6ED}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AADA9CD2-9A91-41FC-B97D-90893473A892}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AADA9CD2-9A91-41FC-B97D-90893473A892}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AADA9CD2-9A91-41FC-B97D-90893473A892}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AADA9CD2-9A91-41FC-B97D-90893473A892}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4C6CDBAA-1EDE-45F0-A748-0496F47603DD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4C6CDBAA-1EDE-45F0-A748-0496F47603DD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4C6CDBAA-1EDE-45F0-A748-0496F47603DD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4C6CDBAA-1EDE-45F0-A748-0496F47603DD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

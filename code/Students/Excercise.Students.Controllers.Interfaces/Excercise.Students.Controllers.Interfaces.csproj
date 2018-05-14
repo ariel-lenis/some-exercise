@@ -4,16 +4,15 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{D76D70B0-D47A-4AB7-A890-5D4CCBEFA6C1}</ProjectGuid>
-    <OutputType>Exe</OutputType>
-    <RootNamespace>Exercise.Students.AppContainer</RootNamespace>
-    <AssemblyName>Exercise.Students.AppContainer</AssemblyName>
+    <ProjectGuid>{AADA9CD2-9A91-41FC-B97D-90893473A892}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Excercise.Students.Controllers.Interfaces</RootNamespace>
+    <AssemblyName>Excercise.Students.Controllers.Interfaces</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
-    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -23,7 +22,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -42,20 +40,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Program.cs" />
+    <Compile Include="IController.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Excercise.Students.Controllers.ConsoleController\Excercise.Students.Controllers.ConsoleController.csproj">
-      <Project>{4c6cdbaa-1ede-45f0-a748-0496f47603dd}</Project>
-      <Name>Excercise.Students.Controllers.ConsoleController</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Excercise.Students.Controllers.Interfaces\Excercise.Students.Controllers.Interfaces.csproj">
-      <Project>{aada9cd2-9a91-41fc-b97d-90893473a892}</Project>
-      <Name>Excercise.Students.Controllers.Interfaces</Name>
+    <ProjectReference Include="..\Excercise.Students.Domain\Excercise.Students.Domain.csproj">
+      <Project>{f664b4f4-3ff8-4126-9c36-0209160bb6ed}</Project>
+      <Name>Excercise.Students.Domain</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
