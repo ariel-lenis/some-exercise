@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Excercise.Students.Controll
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Excercise.Students.Controllers.ConsoleController", "Excercise.Students.Controllers.ConsoleController\Excercise.Students.Controllers.ConsoleController.csproj", "{4C6CDBAA-1EDE-45F0-A748-0496F47603DD}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Exercise.Students.Logger", "Exercise.Students.Logger\Exercise.Students.Logger.csproj", "{2FD72304-CB79-4336-A076-9745BE50BD21}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{4C6CDBAA-1EDE-45F0-A748-0496F47603DD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4C6CDBAA-1EDE-45F0-A748-0496F47603DD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4C6CDBAA-1EDE-45F0-A748-0496F47603DD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2FD72304-CB79-4336-A076-9745BE50BD21}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2FD72304-CB79-4336-A076-9745BE50BD21}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2FD72304-CB79-4336-A076-9745BE50BD21}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2FD72304-CB79-4336-A076-9745BE50BD21}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

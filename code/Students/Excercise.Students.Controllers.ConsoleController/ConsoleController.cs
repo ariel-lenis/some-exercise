@@ -1,4 +1,5 @@
 ﻿using Excercise.Students.Controllers.Interfaces;
+using LoggerProvider;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,7 +12,7 @@ namespace Excercise.Students.Controllers.ConsoleController
     {
         public void Start(string[] arguments)
         {
-            
+            StudentsLogger.Instance.Info("Starting console controller!");
         }
     }
 }
