@@ -36,7 +36,13 @@ namespace Excercise.Students.Controllers.ConsoleController
                 throw new Exception("The target CSV file doesn't exists.");
             }
 
+            var csvLines = File.ReadAllLines(parsedArguments.FileName);
+            StudentsAdapter studentsAdapter = new StudentsAdapter(csvLines);
 
+            foreach (var student in studentsAdapter.GetStudents())
+            {
+
+            }
         }
 
         private Arguments ParseArguments(string[] arguments)

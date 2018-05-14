@@ -45,12 +45,18 @@
   <ItemGroup>
     <Compile Include="Arguments.cs" />
     <Compile Include="ConsoleController.cs" />
+    <Compile Include="ParsingTools.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="StudentsAdapter.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Excercise.Students.Controllers.Interfaces\Excercise.Students.Controllers.Interfaces.csproj">
       <Project>{aada9cd2-9a91-41fc-b97d-90893473a892}</Project>
       <Name>Excercise.Students.Controllers.Interfaces</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Excercise.Students.Domain\Excercise.Students.Domain.csproj">
+      <Project>{f664b4f4-3ff8-4126-9c36-0209160bb6ed}</Project>
+      <Name>Excercise.Students.Domain</Name>
     </ProjectReference>
     <ProjectReference Include="..\Exercise.Students.Logger\Exercise.Students.Logger.csproj">
       <Project>{2fd72304-cb79-4336-a076-9745be50bd21}</Project>
