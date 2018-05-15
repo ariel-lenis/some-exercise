@@ -1,4 +1,6 @@
 ﻿using Excercise.Students.Controllers.Interfaces;
+using Excercise.Students.Dao.Interfaces;
+using Excercise.Students.Dao.MemoryDao;
 using LoggerProvider;
 using System;
 using System.Collections.Generic;
@@ -11,6 +13,11 @@ namespace Excercise.Students.Controllers.ConsoleController
 {
     public class ConsoleController : IController
     {
+        IStudentDao GetStudentDao()
+        {
+            return new StudentMemoryDao();
+        }
+
         public void Start(string[] arguments)
         {
             try
@@ -39,9 +46,11 @@ namespace Excercise.Students.Controllers.ConsoleController
             var csvLines = File.ReadAllLines(parsedArguments.FileName);
             StudentsAdapter studentsAdapter = new StudentsAdapter(csvLines);
 
+            var studentDao = GetStudentDao();
+
             foreach (var student in studentsAdapter.GetStudents())
             {
-
+                long newId = studentDao.CreateStudent(student);
             }
         }
 

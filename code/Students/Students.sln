@@ -13,6 +13,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Excercise.Students.Controll
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Exercise.Students.Logger", "Exercise.Students.Logger\Exercise.Students.Logger.csproj", "{2FD72304-CB79-4336-A076-9745BE50BD21}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Excercise.Students.Dao.Interfaces", "Excercise.Students.Dao.Interfaces\Excercise.Students.Dao.Interfaces.csproj", "{7AFE6400-3CB7-42C8-94A3-9BBEA9708DD4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Excercise.Students.Dao.MemoryDao", "Excercise.Students.Dao.MemoryDao\Excercise.Students.Dao.MemoryDao.csproj", "{D2F4C183-15DC-4A47-A956-C51667FC998D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +43,14 @@ Global
 		{2FD72304-CB79-4336-A076-9745BE50BD21}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2FD72304-CB79-4336-A076-9745BE50BD21}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2FD72304-CB79-4336-A076-9745BE50BD21}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7AFE6400-3CB7-42C8-94A3-9BBEA9708DD4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7AFE6400-3CB7-42C8-94A3-9BBEA9708DD4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7AFE6400-3CB7-42C8-94A3-9BBEA9708DD4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7AFE6400-3CB7-42C8-94A3-9BBEA9708DD4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D2F4C183-15DC-4A47-A956-C51667FC998D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D2F4C183-15DC-4A47-A956-C51667FC998D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D2F4C183-15DC-4A47-A956-C51667FC998D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D2F4C183-15DC-4A47-A956-C51667FC998D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
