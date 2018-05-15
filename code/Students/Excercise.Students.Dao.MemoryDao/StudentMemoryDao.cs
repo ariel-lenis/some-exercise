@@ -49,12 +49,63 @@ namespace Excercise.Students.Dao.MemoryDao
 
         public List<Student> SearchStudent(SearchCriteria searchCriteria)
         {
-            IEnumerable<Student> filtered = ApplyFilters(allStudents, searchCriteria.Filters);
+            IEnumerable<Student> result;
 
-            return filtered.ToList();
+            lock (allStudents)
+            {
+                result = ApplyFilters(allStudents, searchCriteria.Filters);
+                result = ApplySorting(result, searchCriteria.SortList);
+            }
+
+            return result.ToList();
         }
 
-        private IEnumerable<Student> ApplyFilters(List<Student> students, List<Filter> filters)
+        private IEnumerable<Student> ApplySorting(IEnumerable<Student> students, List<Sort> sortList)
+        {
+            IOrderedEnumerable<Student> result = students.OrderBy(x => x.Id);
+
+            foreach (var sort in sortList)
+            {
+                string key = sort.TargetField.ToLower();
+
+                if (key == "name")
+                {
+                    result = CreateSorting(result, x => x.Name, sort.OrderType);
+                }
+                else if (key == "type")
+                {
+                    result = CreateSorting(result, x => x.Type, sort.OrderType);
+                }
+                else if (key == "gender")
+                {
+                    result = CreateSorting(result, x => x.Gender, sort.OrderType);
+                }
+                else if (key == "lastmodification")
+                {
+                    result = CreateSorting(result, x => x.LastModification, sort.OrderType);
+                }
+            }
+
+            return result.AsEnumerable();
+        }
+
+        private IOrderedEnumerable<Student> CreateSorting(IOrderedEnumerable<Student> students, Func<Student, object> selector, EOrderType orderType)
+        {
+            IOrderedEnumerable<Student> result;
+
+            if (orderType == EOrderType.Ascending)
+            {
+                result = students.OrderBy(selector);
+            }
+            else
+            {
+                result = students.OrderByDescending(selector);
+            }
+
+            return result;
+        }
+
+        private IEnumerable<Student> ApplyFilters(IEnumerable<Student> students, List<Filter> filters)
         {
             IEnumerable<Student> result = students;
                 

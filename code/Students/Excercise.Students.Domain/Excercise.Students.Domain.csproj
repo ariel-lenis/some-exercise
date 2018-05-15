@@ -42,8 +42,10 @@
   <ItemGroup>
     <Compile Include="EGender.cs" />
     <Compile Include="EOperator.cs" />
+    <Compile Include="EOrderType.cs" />
     <Compile Include="Filter.cs" />
     <Compile Include="SearchCriteria.cs" />
+    <Compile Include="Sort.cs" />
     <Compile Include="Student.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

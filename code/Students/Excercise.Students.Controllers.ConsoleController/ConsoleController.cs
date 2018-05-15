@@ -57,10 +57,14 @@ namespace Excercise.Students.Controllers.ConsoleController
             SearchCriteria searchCriteria = AdaptSearchCriteria(parsedArguments);
             List<Student> filterResult = studentDao.SearchStudent(searchCriteria);
 
+            Console.WriteLine("---- Results ----");
+
             foreach (var student in filterResult)
             {
                 Console.WriteLine(student);
             }
+
+            Console.WriteLine("----------------");
         }
 
         private SearchCriteria AdaptSearchCriteria(Arguments parsedArguments)
