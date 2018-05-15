@@ -1,5 +1,6 @@
 ﻿using Excercise.Students.Dao.Interfaces;
 using Excercise.Students.Domain;
+using Excercise.Students.Helpers;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -48,7 +49,38 @@ namespace Excercise.Students.Dao.MemoryDao
 
         public List<Student> SearchStudent(SearchCriteria searchCriteria)
         {
-            throw new NotImplementedException();
+            IEnumerable<Student> filtered = ApplyFilters(allStudents, searchCriteria.Filters);
+
+            return filtered.ToList();
+        }
+
+        private IEnumerable<Student> ApplyFilters(List<Student> students, List<Filter> filters)
+        {
+            IEnumerable<Student> result = students;
+                
+            foreach (var filter in filters)
+            {
+                string key = filter.Key.ToLower();
+
+                if (key == "name")
+                {
+                    result = result.Where(x => x.Name.ToLower() == filter.Value.ToString().ToLower());
+                }
+                else if (key == "type")
+                {
+                    result = result.Where(x => x.Type.ToLower() == filter.Value.ToString().ToLower());
+                }
+                else if (key == "gender")
+                {
+                    result = result.Where(x => x.Gender == StudentHelpers.ParseGender(filter.Value.ToString()));
+                }
+                else if (key == "lastmodification")
+                {
+                    result = result.Where(x => x.LastModification == StudentHelpers.ParseDate(filter.Value.ToString()));
+                }
+            }
+
+            return result;
         }
     }
 }

@@ -18,5 +18,10 @@ namespace Excercise.Students.Domain
         {
             this.Id = -1;
         }
+
+        public override string ToString()
+        {
+            return $"{Id}, {Type}, {Name}, {Gender}, {LastModification}";
+        }
     }
 }

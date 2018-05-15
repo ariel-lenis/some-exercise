@@ -1,6 +1,7 @@
 ﻿using Excercise.Students.Controllers.Interfaces;
 using Excercise.Students.Dao.Interfaces;
 using Excercise.Students.Dao.MemoryDao;
+using Excercise.Students.Domain;
 using LoggerProvider;
 using System;
 using System.Collections.Generic;
@@ -52,6 +53,31 @@ namespace Excercise.Students.Controllers.ConsoleController
             {
                 long newId = studentDao.CreateStudent(student);
             }
+
+            SearchCriteria searchCriteria = AdaptSearchCriteria(parsedArguments);
+            List<Student> filterResult = studentDao.SearchStudent(searchCriteria);
+
+            foreach (var student in filterResult)
+            {
+                Console.WriteLine(student);
+            }
+        }
+
+        private SearchCriteria AdaptSearchCriteria(Arguments parsedArguments)
+        {
+            SearchCriteria result = new SearchCriteria();
+
+            foreach (var argument in parsedArguments.Queries)
+            {
+                Filter newFilter = new Filter();
+                newFilter.Key = argument.Key;
+                newFilter.Value = argument.Value;
+                newFilter.Operator = EOperator.Equal;
+
+                result.Filters.Add(newFilter);
+            }
+
+            return result;
         }
 
         private Arguments ParseArguments(string[] arguments)

@@ -52,6 +52,10 @@
       <Project>{f664b4f4-3ff8-4126-9c36-0209160bb6ed}</Project>
       <Name>Excercise.Students.Domain</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Excercise.Students.Helpers\Excercise.Students.Helpers.csproj">
+      <Project>{7bbb14b5-7714-47f3-b21b-d7d76d21ec57}</Project>
+      <Name>Excercise.Students.Helpers</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Exercise.Students.Logger\Exercise.Students.Logger.csproj">
       <Project>{2fd72304-cb79-4336-a076-9745be50bd21}</Project>
       <Name>Exercise.Students.Logger</Name>

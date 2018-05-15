@@ -8,5 +8,11 @@ namespace Excercise.Students.Domain
 {
     public class SearchCriteria
     {
+        public List<Filter> Filters { get; set; }
+
+        public SearchCriteria()
+        {
+            this.Filters = new List<Filter>();
+        }
     }
 }
