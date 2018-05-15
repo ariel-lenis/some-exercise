@@ -62,8 +62,8 @@ namespace Excercise.Students.Dao.MemoryDao
 
         private IEnumerable<Student> ApplySorting(IEnumerable<Student> students, List<Sort> sortList)
         {
-            IOrderedEnumerable<Student> result = students.OrderBy(x => x.Id);
-
+            IOrderedEnumerable<Student> result = students.OrderBy(x => true);
+            
             foreach (var sort in sortList)
             {
                 string key = sort.TargetField.ToLower();
@@ -86,7 +86,7 @@ namespace Excercise.Students.Dao.MemoryDao
                 }
             }
 
-            return result.AsEnumerable();
+            return result;
         }
 
         private IOrderedEnumerable<Student> CreateSorting(IOrderedEnumerable<Student> students, Func<Student, object> selector, EOrderType orderType)
@@ -95,11 +95,11 @@ namespace Excercise.Students.Dao.MemoryDao
 
             if (orderType == EOrderType.Ascending)
             {
-                result = students.OrderBy(selector);
+                result = students.ThenBy(selector);
             }
             else
             {
-                result = students.OrderByDescending(selector);
+                result = students.ThenByDescending(selector);
             }
 
             return result;

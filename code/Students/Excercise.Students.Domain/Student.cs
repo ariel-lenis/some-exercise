@@ -21,7 +21,7 @@ namespace Excercise.Students.Domain
 
         public override string ToString()
         {
-            return $"{Id}, {Type}, {Name}, {Gender}, {LastModification}";
+            return $"{Id},\t{Type},\t{Name},\t{Gender},\t{LastModification}";
         }
     }
 }

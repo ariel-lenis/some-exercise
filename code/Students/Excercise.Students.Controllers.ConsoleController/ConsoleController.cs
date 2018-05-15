@@ -71,14 +71,27 @@ namespace Excercise.Students.Controllers.ConsoleController
         {
             SearchCriteria result = new SearchCriteria();
 
-            foreach (var argument in parsedArguments.Queries)
+            foreach (var query in parsedArguments.Queries)
             {
                 Filter newFilter = new Filter();
-                newFilter.Key = argument.Key;
-                newFilter.Value = argument.Value;
+                newFilter.Key = query.Key;
+                newFilter.Value = query.Value;
                 newFilter.Operator = EOperator.Equal;
 
                 result.Filters.Add(newFilter);
+            }
+
+            foreach (var sort in parsedArguments.SortList)
+            {
+                Sort newSort = new Sort();
+                newSort.TargetField = sort.Value;
+
+                if (sort.Key == Sort.OrderByDesc)
+                {
+                    newSort.OrderType = EOrderType.Descending;
+                }
+
+                result.SortList.Add(newSort);
             }
 
             return result;
@@ -114,14 +127,23 @@ namespace Excercise.Students.Controllers.ConsoleController
             string key = parts[0];
             string value = parts[1];
 
-            if (result.Queries.ContainsKey(key))
+            if (key == Sort.OrderByAsc || key == Sort.OrderByDesc)
             {
-                throw new Exception("Duplicated Query.");
+                StudentsLogger.Instance.Info($"Parsed Sorting Field: [{value}], Type: [{key}]");
+
+                result.SortList.Add(new KeyValuePair<string, string>(key, value));
             }
+            else
+            {
+                if (result.Queries.ContainsKey(key))
+                {
+                    throw new Exception("Duplicated Query.");
+                }
 
-            StudentsLogger.Instance.Info($"Parsed Query Key: [{key}], Value: [{value}]");
+                StudentsLogger.Instance.Info($"Parsed Query Key: [{key}], Value: [{value}]");
 
-            result.Queries.Add(key, value);
+                result.Queries.Add(key, value);
+            }
         }
     }
 }
